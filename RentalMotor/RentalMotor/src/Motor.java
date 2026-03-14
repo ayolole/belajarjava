@@ -19,11 +19,11 @@ public class Motor {
         System.out.println("Merk: " + merk);
         System.out.println("Tipe: " + tipe);
         System.out.println("Harga Sewa: " + hargaSewa);
-        System.out.println("Method display dibuat untuk menampilkan informasi tentang motor yang disewa, termasuk merk, tipe, dan harga sewa.");
+        System.out.println("Method display dibuat untuk menampilkan informasi tentang motor yang disewa, termasuk merk, tipe, dan harga sewa.\n");
     }
 
     public void ubahHargaSewa(int hargaSewa) {
         this.hargaSewa = hargaSewa;
-        System.out.println("method ubahHargaSewa dibuat untuk mengubah harga sewa motor");
+        System.out.println("method ubahHargaSewa dibuat untuk mengubah harga sewa motor\n");
     }
 }

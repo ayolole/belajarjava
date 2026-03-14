@@ -20,17 +20,17 @@ public class Customer {
         System.out.println("Nama: " + nama);
         System.out.println("NIK: " + nik);
         System.out.println("Telepon: " + telepon);
-        System.out.println("method displayCustomer dibuat untuk menampilkan informasi tentang nama, NIK, dan nomor telepon pelanggan");
+        System.out.println("method displayCustomer dibuat untuk menampilkan informasi tentang nama, NIK, dan nomor telepon pelanggan\n");
     }
     public String ubahnama(String nama) {
         this.nama = nama;
-        System.out.println("method ubahnama dibuat untuk mengubah nama pelanggan");
+        System.out.println("method ubahnama dibuat untuk mengubah nama pelanggan\n");
         return nama;
     }
 
     public String ubahTelepon(String telepon) {
         this.telepon = telepon;
-        System.out.println("method ubahTelepon dibuat untuk mengubah nomor telepon pelanggan");
+        System.out.println("method ubahTelepon dibuat untuk mengubah nomor telepon pelanggan\n");
         return telepon;
     }
 }

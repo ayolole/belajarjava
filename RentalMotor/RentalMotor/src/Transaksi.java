@@ -1,33 +1,42 @@
 public class Transaksi {
     public String idTransaksi;
-    public int wakturental;
-    public int hargaTotal;
-
+    public String tanggalTransaksi;
+    public int batasRental;
+    int wakturental;
+    int hargaTotal;
+    int totaldenda;
     public Transaksi() {
         this.idTransaksi = "Tidak ada";
         this.wakturental = 0;
-        this.hargaTotal = 0;
+        this.batasRental = 0;
     };
-    Transaksi(String idTransaksi, int wakturental, int hargaTotal) {
+    Transaksi(String idTransaksi, String tanggalTransaksi, int batasRental) {
         this.idTransaksi = idTransaksi;
-        this.wakturental = wakturental;
-        this.hargaTotal = hargaTotal;
+        this.tanggalTransaksi = tanggalTransaksi;
+        this.batasRental = batasRental;
     }
 
-    public void TampilkanTransaksi() {
+    public void denda(int wakturental) {
+        if (wakturental > batasRental) {
+            totaldenda = (wakturental - batasRental) * 50000; // Contoh perhitungan denda
+            System.out.println("Denda: " + totaldenda);
+            System.out.println("method denda dibuat untuk menghitung dan menampilkan denda jika waktu rental melebihi lama rental yang disepakati.\n");
+        } else {
+            System.out.println("Tidak ada denda. Waktu rental sesuai dengan lama rental yang disepakati.\n");
+        }
+    }
+    
+    public void totalHarga(int hargaSewa, int wakturental) {
+
+        hargaTotal = hargaSewa * batasRental + totaldenda;
+        System.out.println("method totalHarga dibuat untuk menghitung total harga berdasarkan harga sewa dan waktu rental.\n");
+    }
+    public void TampilkanTransaksi(String namaCustomer) {
+        System.out.println("Nama Customer: " + namaCustomer);
         System.out.println("ID Transaksi: " + idTransaksi);
-        System.out.println("Waktu Rental: " + wakturental);
+        System.out.println("Tanggal Transaksi: " + tanggalTransaksi);
+        System.out.println("Lama Rental: " + batasRental);
         System.out.println("Harga Total: " + hargaTotal);
-        System.out.println("method TampilkanTransaksi dibuat untuk menampilkan informasi tentang transaksi rental motor,ID transaksi, waktu rental, dan harga total.");
-    }
-
-    public void ubahWaktuRental(int wakturental) {
-        this.wakturental = wakturental;
-        System.out.println("method ubahWaktuRental dibuat untuk mengubah waktu rental motor");
-    }
-
-    public void ubahHargaTotal(int hargaTotal) {
-        this.hargaTotal = hargaTotal;
-        System.out.println("method ubahHargaTotal dibuat untuk mengubah harga total transaksi rental motor");
+        System.out.println("method TampilkanTransaksi dibuat untuk menampilkan informasi tentang transaksi rental motor,ID transaksi, waktu rental, dan harga total.\n");
     }
 }
